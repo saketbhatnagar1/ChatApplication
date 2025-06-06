@@ -1,0 +1,16 @@
+# === BACKEND (Express) ===
+/backend/node_modules/
+/backend/.env
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
+
+# === OS/Editor/Global files ===
+.DS_Store
+.env
+*.log
+*.swp
+*.swo
+*.iml
+.idea/
+.vscode/
