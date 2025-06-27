@@ -13,8 +13,6 @@ router.post('/signup',signup);
 router.post('/login',login);
 //////////////////Authentication END||||||||||||||||||||||||||||||||||||
 router.put("/update-profile",protectRoute,updateProfile);//added protectroute middleware to check if they are logged in /authenticated,check for session or cookies 
-
-
 router.get("/check",protectRoute,checkAuth)
 
 export default router;
