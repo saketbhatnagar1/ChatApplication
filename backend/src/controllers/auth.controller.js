@@ -151,9 +151,13 @@ export const updateProfile = async (req,res)=>{
     }
 }
 
-export const checkAuth = (req,res)=>{
+export const checkAuth = async (req,res)=>{
     try{
-        res.status(200).json(req.user)
+       const user = await User.findById(req.user._id).select("-password");
+       console.log(user) 
+       return res.status(200).json(user)
+        // userdetails = User.findById()
+        // console.log(req.user._id)
     } catch(error)
     {
        
