@@ -3,12 +3,12 @@ import { type } from "os";
 
 const  messageSchema = new mongoose.Schema(
     {
-    senderId:{
+    senderId:{//sender
         type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
+        ref:"User",//reference to user model
         required:true
     },
-    receiverId:{
+    receiverId:{//receiver
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
         required:true,
@@ -18,7 +18,6 @@ const  messageSchema = new mongoose.Schema(
         },
     image:{
         type:String,//link to the picture
-        
     },
 },
     {timestamps:true}
