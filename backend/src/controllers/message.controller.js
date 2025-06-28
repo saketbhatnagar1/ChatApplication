@@ -1,5 +1,5 @@
-import User from "../models/user.model";
-import Message from "../models/message.model";
+import User from "../models/user.model.js";
+import Message from "../models/message.model.js";
 
 export const getUsersForSidebar = async (req,res)=>{
     try {
@@ -57,7 +57,6 @@ export const sendMessage = async (req,res)=>{
         await newMessage.save();
 
         //add real time functionality through socektio
-
 
         return res.status(201).json(newMessage)
     } catch (error) {
