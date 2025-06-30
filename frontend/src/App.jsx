@@ -1,5 +1,4 @@
 import React, { Profiler, useEffect } from 'react'
-import {Routes,Route} from "react-router-dom"
 import LoginPage from './pages/LoginPage';
 import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
@@ -7,6 +6,7 @@ import SignUpPage from './pages/SignUpPage';
 import HomePage from './pages/HomePage.jsx';
 import Navbar from './components/Navbar.jsx';
 import { axiosInstance } from './lib/axios.js';
+import { Routes, Route, Navigate } from "react-router-dom";
 import {Loader} from "lucide-react"
 import { useAuthStore } from './store/useAuthStore.js';
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
       <Navbar/>
       <Routes>
       <Route path="/" element={authUser ? <HomePage/> : <Navigate to="/login"/>}/>
-      <Route path="/signup" element={!authUser? <SignUpPage/>: <Navigate to="/"/>}/>
+      <Route path="/signup" element={!authUser ? <SignUpPage/>: <Navigate to="/"/>}/>
       <Route path="/login" element={!authUser ? <LoginPage/>: <Navigate to="/"/>}/>
       <Route path="/settings" element={<SettingsPage/>}/>
       <Route path="/profile" element={authUser ? <ProfilePage/> : <Navigate to="/login"/>}/>
